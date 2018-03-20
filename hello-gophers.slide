@@ -1,0 +1,97 @@
+Golang Basics
+Hello Gophers ... this is An Introduction to Golang
+09:00 20 Mar 2018
+Tags: coders, programming, golang
+
+Obed N Munoz
+Cloud Software Engineer, Intel Corporation
+obed.n.munoz@gmail.com
+http://obedmr.com
+@_obedmr
+
+* Agenda
+- *Who* are/is ...
+- *YaPL?* - Yet another Programming Language?
+- The origin of The *Gophermania*
+- *Who* in the world is using it?
+- *Why* I should care?
+- *People* want to `code`
+- Handy *stuff* (links, books, videos, etc)
+
+
+* Who are you?
+.image whoareyou.jpg
+
+
+* Who is this dude?
+.image whoami.jpg
+
+* YaPL? - Yet another Programming Language?
+- Initially for large scale systems at Google
+- Compiled languages advantages
+- Takes the best of the most successful programming languages
+- _"Complexity_ _is_ _multiplicative"_ by Rob Pike
+- Looking for a distributed by design alternative
+
+
+* The origin of The Gophermania
+- At Google in 2009 by Robert Griesemer, Rob Pike, and Ken Thompson
+- Influenced by Niklaus Wirth,  Pascal and Modula-2 inspired the package concept
+- Sometimes called "C for the 21st century"
+- Came from an explosion of complexity
+
+
+* Why I should care?
+- Highly used and required in most of Cloud Service Providers
+- Distributed by design
+- Simplicity
+- The Golang Tooling makes your code pretty :)
+
+
+- Concurrency is not parallelism - _from_ *Go* *Proverbs*
+- Don't communicate bt sharing memory, share memory by communicating - _from_ *Go* *Proverbs*
+
+* People want to code (Program Structure)
+.play -edit main.go
+
+
+* Program Structure
+.link https://github.com/adonovan/gopl.io/blob/master/ch1/echo1/main.go echo1 example
+.link https://github.com/adonovan/gopl.io/blob/master/ch1/dup3/main.go dup3 example
+
+* Basic and Composite types (1/2)
+- Integers
+- Float
+- Complex numbers
+- Booleans
+- Strings
+- Constants
+- Arrays
+- Slices
+- Maps
+- Structs
+- JSON
+- Text and HTML templates
+
+* Basic and Composite types (2/2)
+.link https://github.com/adonovan/gopl.io/blob/master/ch3/surface/main.go Basic types (surface)
+.link https://github.com/adonovan/gopl.io/blob/master/ch4/append/main.go Composite types (slices)
+.link https://blog.golang.org/go-slices-usage-and-internals Golang Slices
+
+* Functions vs Methods
+.link https://github.com/adonovan/gopl.io/blob/master/ch6/geometry/geometry.go Geometry example
+
+* Goroutines
+.link https://github.com/obedmr/tech-talks https://github.com/obedmr/tech-talks
+
+* Channels
+.link https://github.com/obedmr/tech-talks https://github.com/obedmr/tech-talks
+
+* Handy Stuff
+- *The* *Golang* *Tour* - https://tour.golang.org/welcome/1
+- *Golang* *Blog* - https://blog.golang.org/
+- *Golang* *Documentation* - https://golang.org/doc/
+- *Youtube* - _Just_ _For_ _Func_
+- *Book* The Go Programming Language *by* Donovan and Kernighan
+- *Go* *Proverbs* https://go-proverbs.github.io/
+- *Conference* - https://www.gophercon.com/

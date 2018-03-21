@@ -1,3 +1,6 @@
 [submodule "gopl.io"]
 	path = gopl.io
 	url = https://github.com/adonovan/gopl.io.git
+[submodule "tech-talks"]
+	path = tech-talks
+	url = git@github.com:obedmr/tech-talks.git

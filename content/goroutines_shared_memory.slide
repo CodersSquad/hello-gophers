@@ -1,0 +1,167 @@
+Goroutines and Shared Memory
+Golang Tech Talks series
+28 Jun 2018
+Tags: golang, goroutine, channels, shared memory
+
+Obed N Munoz
+Software Engineer
+obed.n.munoz@gmail.com
+http://obedmr.com
+@_obedmr
+
+
+* Based on:
+.link http://techbus.safaribooksonline.com/book/programming/go/9780134190570 The Go Programming Language Book
+
+*Presentation* *code* *and* *examples:*
+.link https://github.com/obedmr/tech-talks https://github.com/obedmr/tech-talks
+
+* Race Conditions (1/2)
+A *race* *condition* is a situation in which the program does not give thecorrect result for some interleavings of the operations of multiplegoroutines.
+
+
+ // Package bank implements a bank with only one account.
+ package bank
+ var balance int
+ func Deposit(amount int) { balance = balance + amount }
+ func Balance() int { return balance }
+
+Execution example:
+
+ // Alice:
+ go func() {
+     bank.Deposit(200)                // A1
+     fmt.Println("=", bank.Balance()) // A2
+ }()
+
+ // Bob:
+ go bank.Deposit(100)                 // B
+
+* Race Conditions (2/2)
+
+Output:
+
+ Alice first              Bob first        Alice/Bob/Alice
+           0                      0                      0
+   A1    200              B     100              A1    200
+   A2 "= 200"             A1    300              B     300
+   B     300              A2 "= 300"             A2 "= 300"
+
+* Goroutine Monitor
+_Do_ _not_ _communicate_ _by_ _sharing_ _memory;_ _instead,_ _share_ _memory_ _by_ _communicating._
+
+ // Package bank provides a concurrency-safe bank with one account.
+ package bank
+ 
+ var deposits = make(chan int) // send amount to deposit
+ var balances = make(chan int) // receive balance
+ func Deposit(amount int) { deposits <- amount }
+ func Balance() int       { return <-balances }
+ 
+ func teller() {
+     var balance int // balance is confined to teller goroutine
+     for {
+         select {
+         case amount := <-deposits:
+             balance += amount
+         case balances <- balance:
+         }
+     }
+ }
+ 
+ func init() {
+     go teller() // start the monitor goroutine
+ }
+
+* Mutual Exclusion (1/2)
+
+we used a buffered channel as a *counting* *semaphore* to ensure that no more than 20 goroutines made simultaneous HTTP requests.
+
+A semaphore that counts only to 1 is called a *binary* *semaphore*.
+
+ var (
+     sema    = make(chan struct{}, 1) // a binary semaphore guarding balance
+     balance int
+ )
+ 
+ func Deposit(amount int) {
+     sema <- struct{}{} // acquire token
+     balance = balance + amount
+     <-sema // release token
+ }
+ 
+ func Balance() int {
+     sema <- struct{}{} // acquire token
+     b := balance
+     <-sema // release token
+     return b
+ }
+
+* Mutual Exclusion (2/2)
+
+- Using `sync.Mutex`
+
+ import "sync"
+ 
+ var (
+     mu      sync.Mutex // guards balance
+     balance int
+ )
+ 
+ func Deposit(amount int) {
+     mu.Lock()
+     balance = balance + amount
+     mu.Unlock()
+ }
+ 
+ func Balance() int {
+     mu.Lock()
+     defer mu.Unlock()
+     return balance
+ }
+
+- Why we used `defer`?
+
+
+* Read/Write Mutexes
+
+Imagine the case of thousands of `Balance` requests. What will happen?
+
+ var mu sync.RWMutex
+ var balance int
+
+ func Balance() int {
+     mu.RLock() // readers lock
+     defer mu.RUnlock()
+     return balance
+ }
+
+The `Balance` function now calls the `RLock` and `RUnlock` methods to acquire and release a readers or shared lock.
+
+The `Deposit` function, which is unchanged, calls the `mu.Lock` and `mu.Unlock` methods to acquire and release a writer or exclusive lock.
+
+
+* Memory Synchronization
+
+Consider:
+
+ var x, y int
+ go func() {
+     x = 1                   // A1
+     fmt.Print("y:", y, " ") // A2
+ }()
+ go func() {
+     y = 1                   // B1
+     fmt.Print("x:", x, " ") // B2
+ }()
+
+Possible outputs:
+
+ y:0 x:1
+ x:0 y:1
+ x:1 y:1
+ y:1 x:1
+ x:0 y:0 // This is a weird one
+ y:0 x:0 // This is another weird one
+
+That's why *Synchronization* patterns are required in this type of concurrent operations.

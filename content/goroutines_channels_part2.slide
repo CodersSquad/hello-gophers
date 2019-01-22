@@ -1,0 +1,204 @@
+More about Goroutines and Channels
+Golang Tech Talks series
+19 Jun 2018
+Tags: golang, goroutine, channels
+
+Obed N Munoz
+Software Engineer
+obed.n.munoz@gmail.com
+http://obedmr.com
+@_obedmr
+
+
+* Summary
+- Unidirectional Channels
+- Buffered Channels
+- Looping in Parallel
+
+
+* Based on:
+.link http://techbus.safaribooksonline.com/book/programming/go/9780134190570 The Go Programming Language Book
+
+*Presentation* *code* *and* *examples:*
+.link https://github.com/obedmr/tech-talks https://github.com/obedmr/tech-talks
+
+* Unidirectional Channels
+
+The unidirectional channel types expose only one or the other of the send and receive operations.
+
+- The type `chan<-int`, a _send-only_ channel of int, allows send but not receive.
+
+- Then, the type `<-chan int`, a _receive-only_ channel of int, allows receive but not send.
+
+ func counter(out chan int)
+ func squarer(out, in chan int)
+ func printer(in chan int)
+
+.play src/pipeline3.go  /^func main/,/^}/
+
+
+* Example Pipeline
+
+.code src/pipeline3.go  /^func counter/,/^}/
+
+.code src/pipeline3.go  /^func squarer/,/^}/
+
+.code src/pipeline3.go  /^func printer/,/^}/
+
+
+* Buffered Channels (1/2)
+A *buffered* _channel_ has a queue of elements. The queue's maximum size is determined when it is created, by the capacity argument to `make`.
+
+ ch = make(chan string, 3)
+
+.image src/empty_buffered.png
+
+
+* Buffered Channels (2/2)
+
+ ch <- "A"
+ ch <- "B"
+ ch <- "C"
+
+.image src/fully_buffered.png
+
+ fmt.Println(cap(ch)) // "3"
+ fmt.Println(<-ch) // "A"
+ fmt.Println(<-ch) // "B"
+ fmt.Println(<-ch) // "C"
+
+
+* Looping in Parallel (1/2)
+
+- Sequential mode
+ // makeThumbnails makes thumbnails of the specified files.
+ func makeThumbnails(filenames []string) {
+     for _, f := range filenames {
+         if _, err := thumbnail.ImageFile(f); err != nil {
+             log.Println(err)
+         }
+     }
+ }
+
+- Parallel mode (1)
+ // NOTE: incorrect!
+ func makeThumbnails2(filenames []string) {
+     for _, f := range filenames {
+         go thumbnail.ImageFile(f) // NOTE: ignoring errors
+     }
+ }
+
+
+* Looping in Parallel (2/2)
+
+- Parallel mode (2)
+ // makeThumbnails3 makes thumbnails of the specified files in parallel.
+ func makeThumbnails3(filenames []string) {
+     ch := make(chan struct{})
+     for _, f := range filenames {
+         go func(f string) {
+             thumbnail.ImageFile(f) // NOTE: ignoring errors
+             ch <- struct{}{}
+         }(f)
+     }
+ 
+     // Wait for goroutines to complete.
+     for range filenames {
+         <-ch
+     }
+ }
+
+* Concurrent Web Crawler (1.1)
+
+ func crawl(url string) []string {
+     fmt.Println(url)
+     list, err := links.Extract(url)
+     if err != nil {
+         log.Print(err)
+     }
+     return list
+ }
+
+* Concurrent Web Crawler (1.2)
+
+ func main() {
+     worklist := make(chan []string)
+ 
+     // Start with the command-line arguments.
+     go func() { worklist <- os.Args[1:] }()
+ 
+     // Crawl the web concurrently.
+     seen := make(map[string]bool)
+     for list := range worklist {
+         for _, link := range list {
+             if !seen[link] {
+                 seen[link] = true
+                 go func(link string) {
+                     worklist <- crawl(link)
+                 }(link)
+             }
+         }
+     }
+ }
+
+* Concurrent Web Crawler (1.3)
+ $ go run crawl1.go http://gopl.io/
+ http://gopl.io/
+ https://golang.org/help/
+ 
+ https://golang.org/doc/
+ https://golang.org/blog/
+ ...
+ 2015/07/15 18:22:12 Get ...: dial tcp: lookup blog.golang.org: no such host
+ 2015/07/15 18:22:12 Get ...: dial tcp 23.21.222.120:443: socket:
+                                                         too many open files
+ ...
+
+* Concurrent Web Crawler (2.1)
+ // tokens is a counting semaphore used to
+ // enforce a limit of 20 concurrent requests.
+ var tokens = make(chan struct{}, 20)
+ 
+ func crawl(url string) []string {
+     fmt.Println(url)
+     tokens <- struct{}{} // acquire a token
+     list, err := links.Extract(url)
+     <-tokens // release the token
+ 
+     if err != nil {
+         log.Print(err)
+     }
+     return list
+ }
+
+
+* Concurrent Web Crawler (2.2)
+ func main() {
+     worklist := make(chan []string)
+     var n int // number of pending sends to worklist
+ 
+     // Start with the command-line arguments.
+     n++
+     go func() { worklist <- os.Args[1:] }()
+ 
+     // Crawl the web concurrently.
+     seen := make(map[string]bool)
+     for ; n > 0; n-- {
+         list := <-worklist
+         for _, link := range list {
+             if !seen[link] {
+                 seen[link] = true
+                 n++
+                 go func(link string) {
+                     worklist <- crawl(link)
+                 }(link)
+             }
+         }
+     }
+ }
+
+* Activity 4.1
+
+- Add depth-limiting to the concurrent crawler.That is, if the user sets -depth=3,then only URLs reachable by at most three links will be fetched.
+
+- Use the code at [[https://github.com/obedmr/tech-talks/tree/master/golang/src/crawl2.go][https://github.com/obedmr/tech-talks/tree/master/golang/src/crawl2.go]] as reference.

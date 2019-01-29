@@ -88,7 +88,7 @@ http://obedmr.com
 
 .link https://blog.golang.org/go-slices-usage-and-internals Golang Slices link
 
-* From Golang Tour (let's code)
+* Let's code: Slices and Maps
 
 .link https://tour.golang.org/moretypes/18 Slices Exercise
       https://tour.golang.org/moretypes/18
@@ -108,7 +108,7 @@ http://obedmr.com
 .code gopl.io/ch6/geometry/geometry.go /func \(p Point\)/,/}/
 
 
-* Functions vs Methods (let's code)
+* Let's code: Functions vs Methods
 1. *Copy* the code from:
 .link https://github.com/adonovan/gopl.io/blob/master/ch6/geometry/geometry.go https://github.com/adonovan/gopl.io/blob/master/ch6/geometry/geometry.go
 2. *Paste* at:
@@ -156,6 +156,7 @@ If goroutines are the activities of a concurrent Go program, *channels* are the 
 - *The* *Golang* *Tour* - https://tour.golang.org/welcome/1
 - *Golang* *Blog* - https://blog.golang.org/
 - *Golang* *Documentation* - https://golang.org/doc/
+- *Effective* *Go* - https://golang.org/doc/effective_go.html
 - *Youtube* - _Just_ _For_ _Func_
 - *Book* The Go Programming Language *by* Donovan and Kernighan
 - *Go* *Proverbs* https://go-proverbs.github.io/

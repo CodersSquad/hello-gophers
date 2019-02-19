@@ -147,6 +147,12 @@ Pipelines are used to connect goroutines together so that the output of one can 
  
 .code src/pipeline.go  /^func squarer/,/^}/
 
+
+* Let's code: ClockWall
+
+Follow instructions at: [[https://github.com/CodersSquad/ap-labs/tree/master/labs/lab2.1]]
+
+
 * More topics for second part
 
 - Buffered and Unbuffered channels

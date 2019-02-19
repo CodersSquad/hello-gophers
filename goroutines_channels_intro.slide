@@ -1,10 +1,10 @@
 Goroutines and Channels Introduction
 Golang Tech Talks series
-21 Jul 2017
+19 Feb 2019
 Tags: golang, goroutine, channels
 
 Obed N Munoz
-Software Engineer
+Cloud Software Engineer
 obed.n.munoz@gmail.com
 http://obedmr.com
 @_obedmr
@@ -14,7 +14,7 @@ http://obedmr.com
 .link http://techbus.safaribooksonline.com/book/programming/go/9780134190570 The Go Programming Language Book
 
 *Presentation* *code* *and* *examples:*
-.link https://github.com/obedmr/tech-talks https://github.com/obedmr/tech-talks
+.link https://github.com/CodersSquad/hello-gophers https://github.com/CodersSquad/hello-gophers
 
 * Goroutines and Channels
 
@@ -38,7 +38,7 @@ When a program starts, its only goroutine is the one that calls the main functio
  
 * Example 1 - spinner (1/2)
 
-.link https://github.com/obedmr/tech-talks/blob/master/golang/src/spinner.go spinner.go
+.link https://github.com/CodersSquad/hello-gophers/blob/master/src/spinner.go spinner.go
  
 .play src/spinner.go  /^func main/,/^}/
 
@@ -52,7 +52,7 @@ When a program starts, its only goroutine is the one that calls the main functio
 
 * Example 2 - Concurrent Clock Server (1/4)
 
-.link https://github.com/obedmr/tech-talks/blob/master/golang/src/clock1.go clock1.go
+.link https://github.com/CodersSquad/hello-gophers/blob/master/src/clock1.go clock1.go
 
 .play src/clock1.go  /^func main/,/^}/
 
@@ -65,7 +65,7 @@ When a program starts, its only goroutine is the one that calls the main functio
 
 * Example 2 - Concurrent Clock Server (3/4)
 
-.link https://github.com/obedmr/tech-talks/blob/master/golang/src/netcat1.go netcat1.go
+.link https://github.com/CodersSquad/hello-gophers/blob/master/src/netcat1.go netcat1.go
 
 .play src/netcat1.go /^func main/,/^}/
 
@@ -76,7 +76,7 @@ When a program starts, its only goroutine is the one that calls the main functio
 
 This is the real *concurrent* one
 
-.link https://github.com/obedmr/tech-talks/blob/master/golang/src/clock2.go clock2.go
+.link https://github.com/CodersSquad/hello-gophers/blob/master/src/clock2.go clock2.go
 
 .play src/clock2.go /^func main/,/^}/
 
@@ -123,7 +123,7 @@ But _make_ could use a second parameter which indicates the channel's _capacity_
 
 * Example 3 - Unbuffered Channels
 
-.link https://github.com/obedmr/tech-talks/blob/master/golang/src/netcat2.go netcat2.go
+.link https://github.com/CodersSquad/hello-gophers/blob/master/src/netcat2.go netcat2.go
  
 .play src/netcat2.go  /^func main/,/^}/
 
@@ -135,13 +135,13 @@ Pipelines are used to connect goroutines together so that the output of one can 
 
 * Example 4 - Pipelines (1/2)
 
-.link https://github.com/obedmr/tech-talks/blob/master/golang/src/pipeline.go pipeline.go
+.link https://github.com/CodersSquad/hello-gophers/blob/master/src/pipeline.go pipeline.go
  
 .play src/pipeline.go  /^func main/,/^}/
 
 * Example 4 - Pipelines (2/2)
 
-.link https://github.com/obedmr/tech-talks/blob/master/golang/src/pipeline.go pipeline.go
+.link https://github.com/CodersSquad/hello-gophers/blob/master/src/pipeline.go pipeline.go
  
 .code src/pipeline.go  /^func counter/,/^}/
  

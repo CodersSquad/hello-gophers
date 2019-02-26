@@ -1,10 +1,10 @@
 More about Goroutines and Channels
 Golang Tech Talks series
-19 Jun 2018
+26 Feb 2019
 Tags: golang, goroutine, channels
 
 Obed N Munoz
-Software Engineer
+Cloud Software Engineer
 obed.n.munoz@gmail.com
 http://obedmr.com
 @_obedmr
@@ -20,15 +20,15 @@ http://obedmr.com
 .link http://techbus.safaribooksonline.com/book/programming/go/9780134190570 The Go Programming Language Book
 
 *Presentation* *code* *and* *examples:*
-.link https://github.com/obedmr/tech-talks https://github.com/obedmr/tech-talks
+.link https://github.com/CodersSquad/hello-gophers https://github.com/CodersSquad/hello-gophers
 
 * Unidirectional Channels
 
 The unidirectional channel types expose only one or the other of the send and receive operations.
 
-- The type `chan<-int`, a _send-only_ channel of int, allows send but not receive.
+- The type *chan<-* *int*, a _send-only_ channel of int, allows send but not receive.
 
-- Then, the type `<-chan int`, a _receive-only_ channel of int, allows receive but not send.
+- Then, the type *<-chan* *int*, a _receive-only_ channel of int, allows receive but not send.
 
  func counter(out chan int)
  func squarer(out, in chan int)
@@ -81,12 +81,13 @@ A *buffered* _channel_ has a queue of elements. The queue's maximum size is dete
  }
 
 - Parallel mode (1)
- // NOTE: incorrect!
  func makeThumbnails2(filenames []string) {
      for _, f := range filenames {
          go thumbnail.ImageFile(f) // NOTE: ignoring errors
      }
  }
+
+- Is the Above example Correct or Incorrect?
 
 
 * Looping in Parallel (2/2)
@@ -197,8 +198,8 @@ A *buffered* _channel_ has a queue of elements. The queue's maximum size is dete
      }
  }
 
-* Activity 4.1
+* Let's Code: Deph-limiting web crawler
 
 - Add depth-limiting to the concurrent crawler.That is, if the user sets -depth=3,then only URLs reachable by at most three links will be fetched.
 
-- Use the code at [[https://github.com/obedmr/tech-talks/tree/master/golang/src/crawl2.go][https://github.com/obedmr/tech-talks/tree/master/golang/src/crawl2.go]] as reference.
+- Instructions at: [[https://github.com/CodersSquad/ap-labs/tree/master/labs/lab2.5]]

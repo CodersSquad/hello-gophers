@@ -1,11 +1,11 @@
 Goroutines and Shared Memory
 Golang Tech Talks series
-28 Jun 2018
+05 Mar 2019
 Tags: golang, goroutine, channels, shared memory
 
 Obed N Munoz
-Software Engineer
-obed.n.munoz@gmail.com
+Cloud Software Engineer
+obed.n.munoz@[gmail|tec].com
 http://obedmr.com
 @_obedmr
 
@@ -14,7 +14,8 @@ http://obedmr.com
 .link http://techbus.safaribooksonline.com/book/programming/go/9780134190570 The Go Programming Language Book
 
 *Presentation* *code* *and* *examples:*
-.link https://github.com/obedmr/tech-talks https://github.com/obedmr/tech-talks
+.link https://github.com/CodersSquad/hello-gophers https://github.com/CodersSquad/hello-gophers
+
 
 * Race Conditions (1/2)
 A *race* *condition* is a situation in which the program does not give thecorrect result for some interleavings of the operations of multiplegoroutines.
@@ -75,7 +76,7 @@ _Do_ _not_ _communicate_ _by_ _sharing_ _memory;_ _instead,_ _share_ _memory_ _b
 
 * Mutual Exclusion (1/2)
 
-we used a buffered channel as a *counting* *semaphore* to ensure that no more than 20 goroutines made simultaneous HTTP requests.
+We may use a buffered channel as a *counting* *semaphore* to ensure that no more than 20 goroutines made simultaneous HTTP requests.
 
 A semaphore that counts only to 1 is called a *binary* *semaphore*.
 
@@ -164,4 +165,4 @@ Possible outputs:
  x:0 y:0 // This is a weird one
  y:0 x:0 // This is another weird one
 
-That's why *Synchronization* patterns are required in this type of concurrent operations.
+That's why *Synchronization* patterns are required on this type of concurrent operations.

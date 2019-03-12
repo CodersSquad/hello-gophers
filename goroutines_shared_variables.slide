@@ -1,7 +1,7 @@
-Goroutines and Shared Memory
+Goroutines and Shared Variables
 Golang Tech Talks series
-05 Mar 2019
-Tags: golang, goroutine, channels, shared memory
+12 Mar 2019
+Tags: golang, goroutine, channels, shared variables
 
 Obed N Munoz
 Cloud Software Engineer
@@ -18,7 +18,7 @@ http://obedmr.com
 
 
 * Race Conditions (1/2)
-A *race* *condition* is a situation in which the program does not give thecorrect result for some interleavings of the operations of multiplegoroutines.
+A *race* *condition* is a situation in which the program does not give the correct result for some interleavings of the operations of multiplegoroutines.
 
 
  // Package bank implements a bank with only one account.
@@ -166,3 +166,9 @@ Possible outputs:
  y:0 x:0 // This is another weird one
 
 That's why *Synchronization* patterns are required on this type of concurrent operations.
+
+
+* Golang Race Detector
+
+Take a look on:
+.link https://blog.golang.org/race-detector

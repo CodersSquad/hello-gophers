@@ -88,12 +88,10 @@ http://obedmr.com
 
 .link https://blog.golang.org/go-slices-usage-and-internals Golang Slices link
 
-* Let's code: Slices and Maps
+* Let's code: Slices and Maps in Go
 
-.link https://tour.golang.org/moretypes/18 Slices Exercise
-      https://tour.golang.org/moretypes/18
-.link https://tour.golang.org/moretypes/23 Maps Exercise
-      https://tour.golang.org/moretypes/23
+- Follow instructions from:
+[[https://github.com/CodersSquad/ap-labs/tree/master/labs/go-slices-maps]]
 
 * Functions vs Methods
 .link https://github.com/adonovan/gopl.io/blob/master/ch6/geometry/geometry.go Geometry example
@@ -108,15 +106,10 @@ http://obedmr.com
 .code gopl.io/ch6/geometry/geometry.go /func \(p Point\)/,/}/
 
 
-* Let's code: Functions vs Methods
-1. *Copy* the code from:
-.link https://github.com/adonovan/gopl.io/blob/master/ch6/geometry/geometry.go https://github.com/adonovan/gopl.io/blob/master/ch6/geometry/geometry.go
-2. *Paste* at:
-.link https://play.golang.org/ https://play.golang.org/
-3. Change *X* and *Y* to *x* and *y* in *Point* structure
-4. Create the *X* and *Y* methods
-5. Add a function *printPoint* that receices a *Point* and prints *x* and *y*
-6. Add *main()* to use the *printFunction*
+* Let's code: Functions and Methods in Go
+
+- Follow instructions from:
+[[https://github.com/CodersSquad/ap-labs/tree/master/labs/go-functions-methods]]
 
 
 * Goroutines
@@ -127,7 +120,6 @@ When a program starts, its only goroutine is the one that calls the main functio
   f()       // call f(); wait for it to return
   go f()    // create a new goroutine that calls f(); don't wait
 
-.link ./tech-talks/golang/goroutines_channels_intro.slide
 
 
 * Channels
@@ -148,8 +140,6 @@ If goroutines are the activities of a concurrent Go program, *channels* are the 
   <-ch     // a receive statement; result is discarded
 
   close(ch) // To close a channel
-
-.link ./tech-talks/golang/goroutines_channels_intro.slide
 
 
 * Handy Stuff

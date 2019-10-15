@@ -13,7 +13,7 @@ http://obedmr.com
 - *YaPL?* - Yet another Programming Language?
 - The origin of The *Gophermania*
 - *Who* in the world is using Go?
-- *Why* I should care?
+- *Why* should I care?
 - *People* want to `code`
 - Simple Web Server in Go
 - What else?
@@ -39,7 +39,7 @@ http://obedmr.com
 - A better question can be, who's not using it?
 
 
-* Why I should care?
+* Why should I care?
 - Highly used and required in most of Cloud Service Providers
 - Distributed by design
 - Simplicity
@@ -47,7 +47,7 @@ http://obedmr.com
 
 
 - Concurrency is not parallelism - _from_ *Go* *Proverbs*
-- Don't communicate bt sharing memory, share memory by communicating - _from_ *Go* *Proverbs*
+- Don't communicate by sharing memory, share memory by communicating - _from_ *Go* *Proverbs*
 
 * People want to code (Program Structure)
 .play -edit src/00/main.go

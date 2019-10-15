@@ -1,6 +1,6 @@
 Golang Basics
 Hello Gophers ... this is An Introduction to Golang
-27 Aug 2019
+15 Oct 2019
 Tags: coders, programming, golang
 
 Obed N Munoz
@@ -12,9 +12,11 @@ http://obedmr.com
 * Agenda
 - *YaPL?* - Yet another Programming Language?
 - The origin of The *Gophermania*
-- *Who* in the world is using it?
+- *Who* in the world is using Go?
 - *Why* I should care?
 - *People* want to `code`
+- Simple Web Server in Go
+- What else?
 - Handy *stuff* (links, books, videos, etc)
 
 
@@ -33,11 +35,15 @@ http://obedmr.com
 - Came from an explosion of complexity
 
 
+* Who in the world is using Go?
+- A better question can be, who's not using it?
+
+
 * Why I should care?
 - Highly used and required in most of Cloud Service Providers
 - Distributed by design
 - Simplicity
-- The Golang Tooling makes your code pretty :)
+- The Golang Tooling makes your code pretty and easy to read and contribute to
 
 
 - Concurrency is not parallelism - _from_ *Go* *Proverbs*
@@ -142,12 +148,28 @@ If goroutines are the activities of a concurrent Go program, *channels* are the 
   close(ch) // To close a channel
 
 
+* Simple Web Server in Go
+
+.code -numbers -edit src/00/webServer.go
+
+
+* What else?
+- *Interfaces* (as contracts, values, type assertions, etc)
+- *go* *test* - [[https://golang.org/cmd/go/#hdr-Testing_flags]]
+- *Reflection?* yes, but be careful
+- *Low* *level* *programming?* yes, it's *unsafe*
+- You can also call *C* *from* *Golang* with *cgo*
+- *present* - [[https://godoc.org/golang.org/x/tools/present]]
+- and ... many other fancy `use{ful|less}` things
+
+
 * Handy Stuff
-- *The* *Golang* *Tour* - https://tour.golang.org/welcome/1
-- *Golang* *Blog* - https://blog.golang.org/
-- *Golang* *Documentation* - https://golang.org/doc/
-- *Effective* *Go* - https://golang.org/doc/effective_go.html
-- *Youtube* - _Just_ _For_ _Func_
-- *Book* The Go Programming Language *by* Donovan and Kernighan
-- *Go* *Proverbs* https://go-proverbs.github.io/
-- *Conference* - https://www.gophercon.com/
+- *The* *Golang* *Tour* - [[https://tour.golang.org/welcome/1]]
+- *Golang* *Blog* - [[https://blog.golang.org/]]
+- *Golang* *Documentation* - [[https://golang.org/doc/]]
+- *Effective* *Go* - [[https://golang.org/doc/effective_go.html]]
+- *Youtube* - [[https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw][_Just_ _For_ _Func_]]
+- *Book* [[https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440][The Go Programming Language]] *by* Donovan and Kernighan
+- *Go* *Proverbs* [[https://go-proverbs.github.io/]]
+- *Conference* - [[https://www.gophercon.com/]]
+- *GolangNews* - [[https://golangnews.com/]]

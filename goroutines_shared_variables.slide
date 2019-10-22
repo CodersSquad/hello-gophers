@@ -1,11 +1,11 @@
 Goroutines and Shared Variables
 Golang Tech Talks series
-12 Mar 2019
+22 Oct 2019
 Tags: golang, goroutine, channels, shared variables
 
 Obed N Munoz
 Cloud Software Engineer
-obed.n.munoz@[gmail|tec].com
+obed.n.munoz@gmail.com
 http://obedmr.com
 @_obedmr
 
@@ -23,22 +23,30 @@ A *race* *condition* is a situation in which the program does not give the corre
 
  // Package bank implements a bank with only one account.
  package bank
+
  var balance int
- func Deposit(amount int) { balance = balance + amount }
- func Balance() int { return balance }
+
+ func Deposit(amount int) {
+     balance = balance + amount
+ }
+
+ func Balance() int {
+     return balance
+ }
+
+
+* Race Conditions (2/2)
 
 Execution example:
 
- // Alice:
+ // Alice
  go func() {
      bank.Deposit(200)                // A1
      fmt.Println("=", bank.Balance()) // A2
  }()
 
- // Bob:
+ // Bob
  go bank.Deposit(100)                 // B
-
-* Race Conditions (2/2)
 
 Output:
 
@@ -76,7 +84,8 @@ _Do_ _not_ _communicate_ _by_ _sharing_ _memory;_ _instead,_ _share_ _memory_ _b
 
 * Mutual Exclusion (1/2)
 
-We may use a buffered channel as a *counting* *semaphore* to ensure that no more than 20 goroutines made simultaneous HTTP requests.
+Remember the [[./goroutines_channels_part2.slide#13][concurrent web crawler example]]? we may use a buffered channel
+as a *counting* *semaphore* to ensure that no more than 20 goroutines made simultaneous HTTP requests.
 
 A semaphore that counts only to 1 is called a *binary* *semaphore*.
 
@@ -137,7 +146,7 @@ Imagine the case of thousands of `Balance` requests. What will happen?
      return balance
  }
 
-The `Balance` function now calls the `RLock` and `RUnlock` methods to acquire and release a readers or shared lock.
+The `Balance` function now calls the `RLock` and `RUnlock` methods to acquire and release a multiple readers or shared lock.
 
 The `Deposit` function, which is unchanged, calls the `mu.Lock` and `mu.Unlock` methods to acquire and release a writer or exclusive lock.
 
@@ -167,6 +176,12 @@ Possible outputs:
 
 That's why *Synchronization* patterns are required on this type of concurrent operations.
 
+
+* Let's code: Goroutines vs OS Threads
+
+- Read section 9.8 from  [[https://www.amazon.com/dp/0134190440/ref=cm_sw_em_r_mt_dp_U_Uz0RDbHAH27PH][The Go Programming Language]] book.
+- Then, do the 9.4 and 9.5 exercises
+- Submit your work under: [[https://github.com/CodersSquad/ap-labs/tree/master/labs/goroutines-vs-os-threads]]
 
 * Golang Race Detector
 

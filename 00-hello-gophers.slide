@@ -1,6 +1,6 @@
 Golang Basics
 Hello Gophers ... this is An Introduction to Golang
-15 Oct 2019
+27 Jan 2020
 Tags: coders, programming, golang
 
 Obed N Munoz
@@ -94,10 +94,17 @@ http://obedmr.com
 
 .link https://blog.golang.org/go-slices-usage-and-internals Golang Slices link
 
+
 * Let's code: Slices and Maps in Go
 
-- Follow instructions from:
-[[https://github.com/CodersSquad/ap-labs/tree/master/labs/go-slices-maps]]
+Follow the link that matches with your current class:
+
+- ap-labs
+[[https://classify.obedmr.com/get-lab/ap-labs/go-slices-maps]]
+
+- dc-labs
+[[https://classify.obedmr.com/get-lab/dc-labs/go-slices-maps]]
+
 
 * Functions vs Methods
 .link https://github.com/adonovan/gopl.io/blob/master/ch6/geometry/geometry.go Geometry example
@@ -114,8 +121,13 @@ http://obedmr.com
 
 * Let's code: Functions and Methods in Go
 
-- Follow instructions from:
-[[https://github.com/CodersSquad/ap-labs/tree/master/labs/go-functions-methods]]
+Follow the link that matches with your current class:
+
+- ap-labs
+[[https://classify.obedmr.com/get-lab/ap-labs/go-functions-methods]]
+
+- dc-labs
+[[https://classify.obedmr.com/get-lab/dc-labs/go-functions-methods]]
 
 
 * Goroutines

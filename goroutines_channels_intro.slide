@@ -152,10 +152,10 @@ Pipelines are used to connect goroutines together so that the output of one can 
 
 Follow the link that matches with your current class:
 
-- ap-labs
+- Advanced Programming
 [[http://classify.obedmr.com/get-lab/ap-labs/clockwall]]
 
-- dc-labs
+- Distributed Programming
 [[http://classify.obedmr.com/get-lab/dc-labs/clockwall]]
 
 

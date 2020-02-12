@@ -1,6 +1,6 @@
 Goroutines and Channels Introduction
 Golang Tech Talks series
-15 Oct 2019
+12 Feb 2020
 Tags: golang, goroutine, channels
 
 Obed N Munoz
@@ -150,7 +150,13 @@ Pipelines are used to connect goroutines together so that the output of one can 
 
 * Let's code: ClockWall
 
-Follow instructions at: [[https://github.com/CodersSquad/ap-labs/tree/master/labs/clockwall]]
+Follow the link that matches with your current class:
+
+- ap-labs
+[[http://classify.obedmr.com/get-lab/ap-labs/clockwall]]
+
+- dc-labs
+[[http://classify.obedmr.com/get-lab/dc-labs/clockwall]]
 
 
 * More topics for second part

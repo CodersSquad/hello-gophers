@@ -1,6 +1,6 @@
 More about Goroutines and Channels
 Golang Tech Talks series
-15 Oct 2019
+17 Feb 2019
 Tags: golang, goroutine, channels
 
 Obed N Munoz
@@ -200,6 +200,10 @@ A *buffered* _channel_ has a queue of elements. The queue's maximum size is dete
 
 * Let's Code: Deph-limiting web crawler
 
-- Add depth-limiting to the concurrent crawler.That is, if the user sets -depth=3,then only URLs reachable by at most three links will be fetched.
+Add depth-limiting to the concurrent crawler. That is, if the user sets `-depth=3`, then only URLs reachable by at most three links will be fetched.
 
-- Instructions at: [[https://github.com/CodersSquad/ap-labs/tree/master/labs/web-crawler]]
+- Advanced Programming
+[[http://classify.obedmr.com/get-lab/ap-labs/web-crawler]]
+
+- Distributed Computing
+[[http://classify.obedmr.com/get-lab/dc-labs/web-crawler]]

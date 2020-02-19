@@ -1,6 +1,6 @@
 Goroutines and Shared Variables
 Golang Tech Talks series
-22 Oct 2019
+19 Feb 2020
 Tags: golang, goroutine, channels, shared variables
 
 Obed N Munoz
@@ -179,9 +179,14 @@ That's why *Synchronization* patterns are required on this type of concurrent op
 
 * Let's code: Goroutines vs OS Threads
 
-- Read section 9.8 from  [[https://www.amazon.com/dp/0134190440/ref=cm_sw_em_r_mt_dp_U_Uz0RDbHAH27PH][The Go Programming Language]] book.
-- Then, do the 9.4 and 9.5 exercises
-- Submit your work under: [[https://github.com/CodersSquad/ap-labs/tree/master/labs/goroutines-vs-os-threads]]
+Follow instructions from:
+
+- Advanced Programming
+[[http://classify.obedmr.com/get-lab/ap-labs/goroutines-vs-os-threads]]
+
+- Distributed Computing
+[[http://classify.obedmr.com/get-lab/dc-labs/goroutines-vs-os-threads]]
+
 
 * Golang Race Detector
 

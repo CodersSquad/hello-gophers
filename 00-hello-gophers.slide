@@ -110,13 +110,13 @@ Follow the link that matches with your current class:
 .link https://github.com/adonovan/gopl.io/blob/master/ch6/geometry/geometry.go Geometry example
 
 *Struct*
-.code gopl.io/ch6/geometry/geometry.go /type Point /,/ }/
+.code gopl.io/ch6/geometry/geometry.go /type Point /,/^}/
 
 *Function*
-.code gopl.io/ch6/geometry/geometry.go /func Distance/,/}/
+.code gopl.io/ch6/geometry/geometry.go /func Distance/,/^}/
 
 *Method*
-.code gopl.io/ch6/geometry/geometry.go /func \(p Point\)/,/}/
+.code gopl.io/ch6/geometry/geometry.go /func \(p Point\)/,/^}/
 
 
 * Let's code: Functions and Methods in Go

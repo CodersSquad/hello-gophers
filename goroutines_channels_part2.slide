@@ -1,6 +1,6 @@
 More about Goroutines and Channels
 Golang Tech Talks series
-17 Feb 2020
+06 Oct 2020
 Tags: golang, goroutine, channels
 
 Obed N Munoz
@@ -17,9 +17,11 @@ http://obedmr.com
 
 
 * Based on:
+
 .link http://techbus.safaribooksonline.com/book/programming/go/9780134190570 The Go Programming Language Book
 
 *Presentation* *code* *and* *examples:*
+
 .link https://github.com/CodersSquad/hello-gophers https://github.com/CodersSquad/hello-gophers
 
 * Unidirectional Channels
@@ -71,6 +73,7 @@ A *buffered* _channel_ has a queue of elements. The queue's maximum size is dete
 * Looping in Parallel (1/2)
 
 - Sequential mode
+
  // makeThumbnails makes thumbnails of the specified files.
  func makeThumbnails(filenames []string) {
      for _, f := range filenames {
@@ -81,6 +84,7 @@ A *buffered* _channel_ has a queue of elements. The queue's maximum size is dete
  }
 
 - Parallel mode (1)
+
  func makeThumbnails2(filenames []string) {
      for _, f := range filenames {
          go thumbnail.ImageFile(f) // NOTE: ignoring errors
@@ -93,6 +97,7 @@ A *buffered* _channel_ has a queue of elements. The queue's maximum size is dete
 * Looping in Parallel (2/2)
 
 - Parallel mode (2)
+
  // makeThumbnails3 makes thumbnails of the specified files in parallel.
  func makeThumbnails3(filenames []string) {
      ch := make(chan struct{})

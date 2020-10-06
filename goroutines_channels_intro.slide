@@ -1,6 +1,6 @@
 Goroutines and Channels Introduction
 Golang Tech Talks series
-12 Feb 2020
+06 Oct 2020
 Tags: golang, goroutine, channels
 
 Obed N Munoz
@@ -11,9 +11,11 @@ http://obedmr.com
 
 
 * Based on:
+
 .link http://techbus.safaribooksonline.com/book/programming/go/9780134190570 The Go Programming Language Book
 
 *Presentation* *code* *and* *examples:*
+
 .link https://github.com/CodersSquad/hello-gophers https://github.com/CodersSquad/hello-gophers
 
 * Goroutines and Channels

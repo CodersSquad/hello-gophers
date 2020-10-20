@@ -1,6 +1,6 @@
 Goroutines and Shared Variables
 Golang Tech Talks series
-19 Feb 2020
+20 Oct 2020
 Tags: golang, goroutine, channels, shared variables
 
 Obed N Munoz
@@ -11,14 +11,16 @@ http://obedmr.com
 
 
 * Based on:
+
 .link http://techbus.safaribooksonline.com/book/programming/go/9780134190570 The Go Programming Language Book
 
 *Presentation* *code* *and* *examples:*
+
 .link https://github.com/CodersSquad/hello-gophers https://github.com/CodersSquad/hello-gophers
 
 
 * Race Conditions (1/2)
-A *race* *condition* is a situation in which the program does not give the correct result for some interleavings of the operations of multiplegoroutines.
+A *race* *condition* is a situation in which the program does not give the correct result for some interleavings of the operations of multiple goroutines.
 
 
  // Package bank implements a bank with only one account.
@@ -59,8 +61,7 @@ Output:
 * Goroutine Monitor
 _Do_ _not_ _communicate_ _by_ _sharing_ _memory;_ _instead,_ _share_ _memory_ _by_ _communicating._
 
- // Package bank provides a concurrency-safe bank with one account.
- package bank
+ package bank // Package bank provides a concurrency-safe bank with one account.
  
  var deposits = make(chan int) // send amount to deposit
  var balances = make(chan int) // receive balance
@@ -153,8 +154,6 @@ The `Deposit` function, which is unchanged, calls the `mu.Lock` and `mu.Unlock` 
 
 * Memory Synchronization
 
-Consider:
-
  var x, y int
  go func() {
      x = 1                   // A1
@@ -191,4 +190,5 @@ Follow instructions from:
 * Golang Race Detector
 
 Take a look on:
+
 .link https://blog.golang.org/race-detector

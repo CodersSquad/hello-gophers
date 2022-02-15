@@ -1,9 +1,7 @@
-Tech Talks Project
-==================
+# Hello Gophers - Golang Talks
 
-Golang Talks
-------------
-- Golang Basics
-- Goroutines and Channels introduction
-- More abour Goroutines and Channels
-- Goroutines and Shared Memory
+## Topics Index
+
+- [Start Up](./start-up/)
+    - [Hello Gophers](start-up/hello-gophers.html)
+- [Goroutines](./goroutines/)

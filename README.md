@@ -3,5 +3,5 @@
 ## Topics Index
 
 - [Start Up](./start-up/)
-    - [Hello Gophers](start-up/hello-gophers.html)
+    - [Hello Gophers](start-up/hello-gophers.md)
 - [Goroutines](./goroutines/)

@@ -286,11 +286,10 @@ If goroutines are the activities of a concurrent Go program, *channels* are the 
 ```
 ---
 
-### Simple Web Server in Go
+## Simple Web Server in Go
 
 ```golang
 ...
-
 func main() {
 	http.HandleFunc("/", handler)
 	log.Fatal(http.ListenAndServe("localhost:8000", nil))
@@ -331,6 +330,6 @@ Web Server source [link](src/webServer.go)
 
 # Thanks
 
-**Obed N Muñoz Reynoso**
-Cloud Software Engineer
-obed.n.munoz@``gmail | tec | intel``.com
+- **Obed N Muñoz Reynoso**
+	- Cloud Software Engineer
+	- obed.n.munoz@``gmail | tec | intel``.com

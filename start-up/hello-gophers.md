@@ -207,8 +207,9 @@ Basic types (surface) source code [link](https://github.com/adonovan/gopl.io/blo
 
 ## Let's code: Slices and Maps in Go
 
-https://classify.obedmr.com/get-lab/ap-labs/go-slices-maps
-
+Solve the 2 following exercises in the [**Tour of Go**](https://go.dev/tour/welcome/1)
+- [Exercise: Slices](https://go.dev/tour/moretypes/18)
+- [Exercise: Maps](https://go.dev/tour/moretypes/23)
 
 ---
 
@@ -242,9 +243,10 @@ func (p Point) Distance(q Point) float64 {
 
 ---
 
-## Let's code: Functions and Methods in Go
+## Let's code: Let's play with Geometry
 
-https://classify.obedmr.com/get-lab/ap-labs/go-functions-methods
+Follow the instructions in the link:
+https://github.com/CodersSquad/go-geometry
 
 ---
 

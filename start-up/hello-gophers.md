@@ -7,7 +7,7 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-![bg left:40% 80%](https://marp.app/assets/marp.svg)
+![bg left:40% 80%](https://gopher.gallery/images/gophers/gopherbw.png)
 
 # **Hello Gophers**
 ## This is just the beginning

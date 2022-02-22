@@ -138,3 +138,7 @@ tags
 [._]*.un~
 
 # End of https://www.gitignore.io/api/c,go,vim,emacs
+
+# custom
+*.html
+public

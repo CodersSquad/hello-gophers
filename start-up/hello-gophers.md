@@ -67,7 +67,7 @@ https://talks.obedmr.com/
 
 ---
 
-```golang
+```lang
 package main
 
 import (
@@ -92,7 +92,7 @@ func main() {
 ```
 
 ---
-```golang
+```lang
 package main
 
 import (
@@ -114,7 +114,7 @@ echo1 source code [link](https://github.com/adonovan/gopl.io/blob/master/ch1/ech
 
 ---
 
-```golang
+```lang
 package main
 
 import (
@@ -140,7 +140,7 @@ func main() {
 
 ---
 
-```golang
+```lang
 	for line, n := range counts {
 		if n > 1 {
 			fmt.Printf("%d\t%s\n", n, line)
@@ -173,7 +173,7 @@ ul { columns: 2; }
 
 ## Basic and Composite types (2/3)
 
-```golang
+```lang
 const (
 	width, height = 600, 320            // canvas size in pixels
 	cells         = 100                 // number of grid cells
@@ -192,7 +192,7 @@ Basic types (surface) source code [link](https://github.com/adonovan/gopl.io/blo
 ## Basic and Composite types (3/3)
 [Composite types (slices)](https://github.com/adonovan/gopl.io/blob/master/ch4/append/main.go)
 
-```golang
+```lang
  letters := []string{"a", "b", "c", "d"}
 
  func make([]T, len, cap) []T
@@ -217,12 +217,12 @@ Solve the 2 following exercises in the [**Tour of Go**](https://go.dev/tour/welc
 [Geometry example](https://github.com/adonovan/gopl.io/blob/master/ch6/geometry/geometry.go)
 
 **Struct**
-```golang
+```lang
 type Point struct{ X, Y float64 }
 ```
 
 **Function**
-```golang
+```lang
 // traditional function
 func Distance(p, q Point) float64 {
 	return math.Hypot(q.X-p.X, q.Y-p.Y)
@@ -234,7 +234,7 @@ func Distance(p, q Point) float64 {
 
 **Method**
 
-```golang
+```lang
 // same thing, but as a method of the Point type
 func (p Point) Distance(q Point) float64 {
 	return math.Hypot(q.X-p.X, q.Y-p.Y)
@@ -255,7 +255,7 @@ In Go, each concurrently executing activity is called a _goroutine_.
 
 When a program starts, its only goroutine is the one that calls the main function. It's called the _main_goroutine_.
 
-```go
+```
   f()       // call f(); wait for it to return
   go f()    // create a new goroutine that calls f(); don't wait
 ```
@@ -273,7 +273,7 @@ If goroutines are the activities of a concurrent Go program, *channels* are the 
 
 ---
 
-```golang
+```lang
   // Channels Examples
 
   ch := make(chan int) // ch has type 'chan int'
@@ -290,7 +290,7 @@ If goroutines are the activities of a concurrent Go program, *channels* are the 
 
 ## Simple Web Server in Go
 
-```golang
+```lang
 ...
 func main() {
 	http.HandleFunc("/", handler)

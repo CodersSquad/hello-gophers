@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sections=(start-up)
+sections=(start-up goroutines)
 
 rm -rf public
 

@@ -264,7 +264,7 @@ func main() {
 
 Pipelines are used to connect goroutines together so that the output of one can be the input to another.
 
-![](src/pipeline.png)
+![](images/pipeline.png)
 
 
 ---

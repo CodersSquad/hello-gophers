@@ -303,3 +303,12 @@ A **buffered channel** has a queue of elements. The queue's maximum size is dete
 Add depth-limiting to the concurrent crawler. That is, if the user sets `-depth=3`, then only URLs reachable by at most three links will be fetched.
 
 https://github.com/CodersSquad/go-web-crawler
+
+
+---
+
+# Thanks
+
+- **Obed N Muñoz Reynoso**
+	- Cloud Software Engineer
+	- obed.n.munoz@``gmail | tec | intel``.com
